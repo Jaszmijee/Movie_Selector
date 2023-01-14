@@ -1,17 +1,14 @@
 package com.example.movies_selector.domain;
 
-
 import jakarta.persistence.*;
 
-import java.time.LocalTime;
-
 @Entity
-@Table(name = "MOVIES", uniqueConstraints = {@UniqueConstraint(columnNames = {"TITLE", "PRODUCTION_YEAR" })})
+@Table(name = "MOVIES", uniqueConstraints = {@UniqueConstraint(columnNames = {"TITLE", "PRODUCTION_YEAR"})})
 public class Movie {
 
     private Long id;
     private String title;
-    private int year;
+    private String year;
     private Status status;
     private String imdbStatus;
     String duration;
@@ -22,6 +19,7 @@ public class Movie {
 
     public Movie() {
     }
+
     @Id
     @GeneratedValue
     @Column(name = "ID")
@@ -35,7 +33,7 @@ public class Movie {
     }
 
     @Column(name = "PRODUCTION_YEAR")
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
@@ -63,7 +61,7 @@ public class Movie {
         this.title = title;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

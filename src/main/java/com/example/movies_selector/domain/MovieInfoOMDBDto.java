@@ -22,6 +22,4 @@ public class MovieInfoOMDBDto {
     private String duration;
     @JsonProperty("Response")
     private String response;
-
-
 }

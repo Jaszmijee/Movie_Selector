@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-
 @Transactional
 @Repository
 public interface MovieRepository extends CrudRepository<Movie, Long> {
@@ -23,7 +22,7 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
     @Override
     Movie save(Movie movie);
 
-    Movie findByTitleEquals(String title);
+    Movie findByTitleEqualsIgnoreCase(String title);
 
     List<Movie> findByStatus(Status status);
 
@@ -31,7 +30,6 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
     void deleteById(Long movieId);
 
     void deleteAllByStatus(Status status);
-
 }
 
 
